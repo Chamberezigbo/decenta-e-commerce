@@ -46,9 +46,9 @@
                                         <li class="active">
                                              <a href="index.php">Home</a>
                                         </li>
-                                        <li><a href="shop.html">Store</a></li>
+                                        <li><a href="shop.php">Store</a></li>
                                         <li class="has-children"></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
                                    </ul>
                               </nav>
                          </div>
