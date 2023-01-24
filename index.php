@@ -3,6 +3,11 @@
                $currentTime = time();
                if (isset($_SESSION['auth']) && $currentTime < $_SESSION['expire']) {
                     include('autheader.php');
+                    print('<script>
+                              document.addEventListener("DOMContentLoaded", function() {
+                              toastr.success("Welcome youve been logged in");
+                              })
+                         </script>');
                } else {
                     session_unset();
                     session_destroy();
