@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      $password = $_POST['password'];
 
      if ($email == "myadmin@admain.com" && $password == "admin12345") {
-          $_SESSION['auth'] = true;
+          $_SESSION['admin-auth'] = true;
           $_SESSION['start'] = time();
           $_SESSION['expire'] = $_SESSION['start'] + (40 * 60);
           print('<script>
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     })
           </script>');
           //? need to change the redirection // 
-          header("admin/");
+          header("Location:admin/");
           exit();
      } else {
           $result = $db->SelectOne("SELECT * FROM users WHERE email = :email", ['email' => $email]);

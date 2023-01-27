@@ -17,6 +17,9 @@
 
      <!-- Custom styles for this template-->
      <link href="css/sb-admin-2.min.css" rel="stylesheet">
+     <script src="https://unpkg.com/octavalidate@1.2.5/native/validate.js"></script>
+     <link rel="stylesheet" href="../js/toastr-master/build/toastr.min.css" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 
 </head>
 
@@ -41,7 +44,7 @@
 
                <!-- Nav Item - Dashboard -->
                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="index.php">
                          <i class="fas fa-fw fa-tachometer-alt"></i>
                          <span>Dashboard</span></a>
                </li>
@@ -76,9 +79,9 @@
 
                <!-- Nav Item - Charts -->
                <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
+                    <a class="nav-link" href="products.php">
                          <i class="fas fa-fw fa-chart-area"></i>
-                         <span>Charts</span></a>
+                         <span>Products</span></a>
                </li>
 
                <!-- Nav Item - Tables -->
