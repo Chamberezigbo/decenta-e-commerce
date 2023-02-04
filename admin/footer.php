@@ -31,19 +31,24 @@
                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="logout.php">Logout</a>
                </div>
           </div>
      </div>
 </div>
+
+
+
+
+<!-- end -->
 
 <!-- Bootstrap core JavaScript-->
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- table -data  -->
+<script language="JavaScript" type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin-2.min.js"></script>
@@ -53,6 +58,12 @@
 
 <!-- Page level custom scripts -->
 <script src="../js/toastr-master/build//toastr.min.js"></script>
+
+<script>
+     $(document).ready(function() {
+          $('#table_id').DataTable();
+     });
+</script>
 
 </body>
 

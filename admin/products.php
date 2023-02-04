@@ -17,7 +17,7 @@ if (isset($_SESSION['success']) && isset($_SESSION['msg'])) {
      unset($_SESSION['success']);
      unset($_SESSION['msg']);
 }
-
+//! finch up with updating product and viewing oder's //
 //render the form 
 if ($action == "view") {
      $products = $db->SelectAll("SELECT * FROM product", []);
@@ -26,15 +26,11 @@ if ($action == "view") {
                if (isset($_POST['action']) && !empty($_POST['action'])) {
                     //update a package
                     if ($_POST['action'] == 'upd-package') {
-                         $db->Update("UPDATE package SET package_name = :name, min_deposit = :min_d, max_deposit = :max_d, min_return = :min_r, max_return = :max_r, bonus = :bonus, duration = :dur WHERE id = :id", [
+                         $db->Update("UPDATE product SET name = :name, amount = :amount, description = :des WHERE id = :id", [
+                              'name' => $_POST['product_name'],
+                              'des' => $_POST['pro_description'],
+                              'amount' => $_POST['pro_amount'],
                               'id' => $_POST['id'],
-                              'name' => $_POST['package_name'],
-                              'min_d' => $_POST['min_deposit'],
-                              'max_d' => $_POST['max_deposit'],
-                              'min_r' => $_POST['min_return'],
-                              'max_r' => $_POST['max_return'],
-                              'bonus' => $_POST['bonus'],
-                              'dur' => $_POST['duration'],
                          ]);
                          $_SESSION['success'] = true;
                          $_SESSION['msg'] = "Package has been updated";
@@ -65,7 +61,9 @@ if ($action == "view") {
                $target_dir = "uploads/";
                $target = $target_dir . basename($_FILES["pro_image"]["name"]);
                $target_file = $_FILES["pro_image"]["name"];
-               // if (!move_uploaded_file($_FILES["proof_of_payment"]["tmp_name"], $target)) {
+               $temp = explode('.', $target);
+               $doc = round(microtime(true)) . '.' . end($temp);
+               // if (!move_uploaded_file($_FILES["proof_of_payment"]["tmp_name"], $target_dir . $doc)) {
                //      $_SESSION['msg'] = "File upload failed";
                //      $_SESSION['success'] = false;
                //      header("Location:./products.php");
@@ -75,7 +73,7 @@ if ($action == "view") {
                     'name' => $_POST['product_name'],
                     'description' => $_POST['pro_description'],
                     'amount' => $_POST['pro_amount'],
-                    'pro_image' => $target,
+                    'pro_image' => $doc,
                ]);
 
                $_SESSION['success'] = true;
@@ -87,7 +85,7 @@ if ($action == "view") {
           } catch (Exception $e) {
                error_log($e);
                $_SESSION['success'] = false;
-               $_SESSION['msg'] = "A server error has occured";
+               $_SESSION['msg'] = "A server error has occurred";
                //reset post array
                header("Location:products.php");
                exit();
@@ -198,7 +196,7 @@ require "header.php";
                          </div>
                          <div class="mb-3">
                               <label class="form-label">Product Image</label>
-                              <input class="form-control" type="file" name="pro_image" id="inp_min_return" octavalidate="R" accept-mime="image/jpeg, image/png, image/jpg" maxsize="5mb">
+                              <input class="form-control" type="file" name="pro_image" id="inp_min_return" octavalidate="R" accept-mime="image/jpeg, image/png, image/jpg" maxsize="10mb">
                          </div>
                          <div class=" mb-2">
                               <button class="btn btn-success">Save Package</button>
@@ -212,47 +210,35 @@ require "header.php";
           <div class="modal-dialog modal-dialog-centered">
                <div class="modal-content">
                     <div class="modal-header">
-                         <h5 class="modal-title">Update Balance</h5>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                         <h5 class="modal-title">Update Product </h5>
+                         <p class="model-title text-danger">You are meant to Update all filed</p>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
                     </div>
-                    <div class="modal-body">
-                         <form method="post" id="form_upd_bal">
+                    <form method="post" id="form_upd_bal">
+                         <div class="modal-body">
                               <input type="hidden" name="action" value="upd-package">
                               <input type="hidden" name="id" id="inp_package_id">
+
                               <div class="mb-3">
-                                   <label class="form-label">Package name</label>
-                                   <input class="form-control" type="text" name="package_name" id="inp_package_name" octavalidate="R,TEXT">
+                                   <label class="form-label">Product name</label>
+                                   <input class="form-control" type="text" name="product_name" id="inp_package_name" octavalidate="R,TEXT">
                               </div>
                               <div class="mb-3">
-                                   <label class="form-label">Minimum Deposit</label>
-                                   <input class="form-control" type="number" name="min_deposit" id="inp_min_deposit" octavalidate="R,DIGITS">
+                                   <label class="form-label">Product Description</label>
+                                   <textarea name="pro_description" class="form-control" cols="30" id="inp_pro_des" rows="10" octavalidate="R,TEXT"></textarea>
                               </div>
                               <div class="mb-3">
-                                   <label class="form-label">Maximum Deposit</label>
-                                   <input class="form-control" type="number" name="max_deposit" id="inp_max_deposit" octavalidate="R,DIGITS">
+                                   <label class="form-label">Product Amount</label>
+                                   <input class="form-control" type="number" name="pro_amount" id="inp_max_deposit" octavalidate="R,DIGITS">
                               </div>
-                              <div class="mb-3">
-                                   <label class="form-label">Minimum return</label>
-                                   <input class="form-control" type="number" name="min_return" id="inp_min_return" octavalidate="R,DIGITS">
-                              </div>
-                              <div class="mb-3">
-                                   <label class="form-label">Maximum return</label>
-                                   <input class="form-control" type="number" name="max_return" id="inp_max_return" octavalidate="R,DIGITS">
-                              </div>
-                              <div class="mb-3">
-                                   <label class="form-label">Gift Bonus</label>
-                                   <input class="form-control" type="number" name="bonus" id="inp_bonus" octavalidate="R,DIGITS" value="0">
-                              </div>
-                              <div class="mb-3">
-                                   <label class="form-label">Duration</label>
-                                   <input class="form-control" type="text" name="duration" id="inp_duration" octavalidate="R,TEXT">
-                              </div>
-                         </form>
-                    </div>
-                    <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                         <button form="form_upd_bal" class="btn btn-success">Update</button>
-                    </div>
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Save changes</button>
+                         </div>
+                    </form>
                </div>
           </div>
      </div>
@@ -278,7 +264,7 @@ require "header.php";
                     if (this.getAttribute('data-package-id')) {
                          $('#inp_package_id').val(this.getAttribute('data-package-id'))
                          //show the modal
-                         new bootstrap.Modal('#modal_upd_package').show()
+                         $('#modal_upd_package').modal('show')
                     }
                })
           })

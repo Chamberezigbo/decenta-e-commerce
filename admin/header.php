@@ -15,11 +15,14 @@
      <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
      <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+     <!-- for table data -->
+     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+
+
      <!-- Custom styles for this template-->
      <link href="css/sb-admin-2.min.css" rel="stylesheet">
      <script src="https://unpkg.com/octavalidate@1.2.5/native/validate.js"></script>
      <link rel="stylesheet" href="../js/toastr-master/build/toastr.min.css" />
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 
 </head>
 
@@ -284,7 +287,7 @@
                                    </a>
                                    <!-- Dropdown - User Information -->
                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                        <a class="dropdown-item" href="#">
+                                        <!-- <a class="dropdown-item" href="#">
                                              <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                              Profile
                                         </a>
@@ -295,9 +298,9 @@
                                         <a class="dropdown-item" href="#">
                                              <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                              Activity Log
-                                        </a>
+                                        </a> -->
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                                              <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                              Logout
                                         </a>
