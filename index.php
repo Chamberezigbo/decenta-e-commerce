@@ -1,22 +1,6 @@
 			<?php
-               require('core/pdo.php');
-
-               $db = new DatabaseClass();
-               $products = $db->SelectAll("SELECT * FROM product", []);
-               session_start();
-               $currentTime = time();
-               if (isset($_SESSION['auth']) && $currentTime < $_SESSION['expire']) {
-                    include('autheader.php');
-                    print('<script>
-                              document.addEventListener("DOMContentLoaded", function() {
-                              toastr.success("Welcome youve been logged in");
-                              })
-                         </script>');
-               } else {
-                    session_unset();
-                    session_destroy();
-                    include('header.php');
-               }
+               require('auth.php');
+               $products = $db->SelectAll("SELECT * FROM product LIMIT 3", []);
                ?>
 			<div class="site-blocks-cover" style="background-image: url('images/hero_1.jpg')">
 			     <div class="container">
@@ -123,7 +107,7 @@
 			     </div>
 			</div>
 
-			<div class="site-section bg-light">
+			<!-- <div class="site-section bg-light">
 			     <div class="container">
 			          <div class="row">
 			               <div class="title-section text-center col-12">
@@ -172,7 +156,7 @@
 			               </div>
 			          </div>
 			     </div>
-			</div>
+			</div> -->
 
 			<div class="site-section">
 			     <div class="container">

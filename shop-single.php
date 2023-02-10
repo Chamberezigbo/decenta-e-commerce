@@ -1,30 +1,24 @@
 			<?php
-               require('core/pdo.php');
-               $productId = (isset($_GET) && isset($_GET['productId'])) ? htmlspecialchars($_GET['productId']) : null;
+               require('auth.php');
+               $msg = $success = '';
+               if (isset($_SESSION['success']) && isset($_SESSION['msg'])) {
+                    // || checks for boolean values only
+                    $success = $_SESSION['success'] || false;
+                    $msg = $_SESSION['msg'];
+                    //remove the session
+                    unset($_SESSION['success']);
+                    unset($_SESSION['msg']);
+               }
 
-               $db = new DatabaseClass();
+
+               $productId = (isset($_GET) && isset($_GET['productId'])) ? htmlspecialchars($_GET['productId']) : null;
                $single_products = $db->SelectAll("SELECT * FROM product WHERE id = :id", ['id' => $productId]);
                foreach ($single_products as $product) {
                     $productName = $product['name'];
-                    $imageUrl = 'admin/uploads' . $single_products[0]['pro_image'];
+                    $imageUrl = 'admin/uploads' . $product['pro_image'];
                     $des = $product['description'];
                     $amount = $product['amount'];
-               }
-
-               session_start();
-               $currentTime = time();
-               if (isset($_SESSION['auth']) && $currentTime < $_SESSION['expire']) {
-                    include('autheader.php');
-                    print('<script>
-                              document.addEventListener("DOMContentLoaded", function() {
-                              toastr.success("Welcome youve been logged in");
-                              })
-                         </script>');
-               } else {
-                    session_unset();
-                    session_destroy();
-                    include('header.php');
-               }
+               };
                ?>
 
 			<div class="bg-light py-3">
@@ -51,26 +45,32 @@
 			                    <p><strong class="text-primary h4">$ <?= $amount ?></strong></p>
 			                    <!-- <p> <del>$95.00</del> <strong class="text-primary h4">$55.00</strong></p> -->
 
-			                    <div class="mb-5">
-			                         <div class="input-group mb-3" style="max-width: 220px;">
-			                              <div class="input-group-prepend">
-			                                   <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+			                    <form action="add-to-cart.php?action=add&id=<?= $productId ?>" method="post">
+			                         <div class="mb-5">
+			                              <div class="input-group mb-3" style="max-width: 220px;">
+			                                   <div class="input-group-prepend">
+			                                        <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+			                                   </div>
+			                                   <input type="text" class="form-control text-center" name="quantity" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+			                                   <div class="input-group-append">
+			                                        <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+			                                   </div>
+			                                   <!-- list of hidden product to add to cart -->
+			                                   <input type="hidden" name="hidden_product_name" value="<?= $productName ?>">
+			                                   <input type="hidden" name="hidden_product_price" value="<?= $amount ?>">
+			                                   <input type="hidden" name="hidden_product_image" value="<?= $imageUrl ?>">
 			                              </div>
-			                              <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-			                              <div class="input-group-append">
-			                                   <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-			                              </div>
+
 			                         </div>
+			                         <button type="submit" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary" name="add_to_cart">Add To Cart</button>
+			                    </form>
 
-			                    </div>
-			                    <p><a href="cart.html" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a></p>
-
-			                    <div class="mt-5">
+			                    <!-- <div class="mt-5">
 			                         <ul class="nav nav-pills mb-3 custom-pill" id="pills-tab" role="tablist">
 			                              <li class="nav-item">
 			                                   <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Ordering Information</a>
 			                              </li>
-			                              <li class="nav-item">
+			                              <li class="nav-item">class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary"
 			                                   <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Specifications</a>
 			                              </li>
 
@@ -86,20 +86,9 @@
 			                                        <tbody>
 			                                             <tr>
 			                                                  <th scope="row">OTC022401</th>
-			                                                  <td>Pain Management: Acetaminophen PM Extra-Strength Caplets, 500 mg, 100/Bottle</td>
+			                                                  <td><?= $des ?></td>
 			                                                  <td>1 BT</td>
 			                                             </tr>
-			                                             <tr>
-			                                                  <th scope="row">OTC022401</th>
-			                                                  <td>Pain Management: Acetaminophen PM Extra-Strength Caplets, 500 mg, 100/Bottle</td>
-			                                                  <td>144/CS</td>
-			                                             </tr>
-			                                             <tr>
-			                                                  <th scope="row">OTC022401</th>
-			                                                  <td>Pain Management: Acetaminophen PM Extra-Strength Caplets, 500 mg, 100/Bottle</td>
-			                                                  <td>1 EA</td>
-			                                             </tr>
-
 			                                        </tbody>
 			                                   </table>
 			                              </div>
@@ -130,7 +119,7 @@
 			                              </div>
 
 			                         </div>
-			                    </div>
+			                    </div> -->
 
 
 			               </div>
@@ -167,3 +156,18 @@
 			<?php
                include("footer.php");
                ?>
+
+			<script>
+			     <?php
+                    if (isset($success) && isset($msg)) {
+                         if ($success && !empty($msg)) {
+                    ?>
+			               toastr.success("<?php echo $msg; ?>")
+			          <?php
+                         } elseif (!$success && !empty($msg)) { ?>
+			               toastr.error("<?php echo $msg; ?>")
+			     <?php
+                         }
+                    }
+                    ?>
+			</script>

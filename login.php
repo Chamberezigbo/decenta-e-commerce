@@ -1,13 +1,11 @@
 <?php
-include('header.php');
+include('auth.php');
 
 //check if session is started already
 if (session_status() === PHP_SESSION_NONE)
      session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-     require 'core/pdo.php';
-     $db = new DatabaseClass();
      $email = trim($_POST['email']);
      $password = $_POST['password'];
 
@@ -15,12 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $_SESSION['admin-auth'] = true;
           $_SESSION['start'] = time();
           $_SESSION['expire'] = $_SESSION['start'] + (40 * 60);
-          print('<script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                    toastr.success("You have been logged in as APA Admin");
-                    })
-          </script>');
-          //? need to change the redirection // 
           header("Location:admin/");
           exit();
      } else {
@@ -33,13 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION["user_id"] = $result['user_id'];
                     $_SESSION["email"] = $result['email'];
                     $_SESSION["fullName"] = $result['fullName'];
-                    print('<script>
-                              document.addEventListener("DOMContentLoaded", function() {
-                              toastr.success("Welcome youve been logged in");
-                              })
+                    print(
+                    '<script>
+                              setTimeout(() => {
+                                   toastr.success("Welcome youve been logged in");
+                                   console.log("Delayed for 1 second.");
+                              },5000)
+                              window.location = "index.php";
                          </script>');
-                    header("Location:index.php");
-                    exit();
                } else {
                     print('<script>
                                    document.addEventListener("DOMContentLoaded", function() {

@@ -1498,7 +1498,6 @@ a:hover {
 
 .formSection {
 	font-family: "Poppins", sans-serif;
-	height: 100vh;
 	background-color: #6feaea;
 }
 
@@ -1609,6 +1608,7 @@ input[type="reset"]:active {
 
 input[type="text"],
 input[type="password"],
+input[type="tel"],
 input[type="email"] {
 	background-color: #f6f6f6;
 	border: none;
@@ -1629,9 +1629,14 @@ input[type="email"] {
 	-webkit-border-radius: 5px 5px 5px 5px;
 	border-radius: 5px 5px 5px 5px;
 }
+select {
+	margin-left: 30px;
+     max-width:85%;
+}
 
 input[type="text"],
 input[type="password"],
+input[type="tel"],
 input[type="email"]:focus {
 	background-color: #fff;
 	border-bottom: 2px solid #6feaea;
@@ -1639,6 +1644,7 @@ input[type="email"]:focus {
 
 input[type="text"],
 input[type="password"],
+input[type="tel"],
 input[type="email"]:placeholder {
 	color: #cccccc;
 }

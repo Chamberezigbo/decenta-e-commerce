@@ -19,6 +19,8 @@
 
      <link rel="stylesheet" href="css/style.css" />
      <link rel="stylesheet" href="js/toastr-master/build/toastr.min.css" />
+     <!-- fluterwave -->
+     <script src="https://checkout.flutterwave.com/v3.js"></script>
 </head>
 
 <body>
@@ -55,9 +57,9 @@
                          </div>
                          <div class="icons">
                               <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-                              <a href="cart.html" class="icons-btn d-inline-block bag">
+                              <a href="cart.php" class="icons-btn d-inline-block bag">
                                    <span class="icon-shopping-bag"></span>
-                                   <span class="number">2</span>
+                                   <span class="number"><?php echo ((isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : 0) ?></span>
                               </a>
                               <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
                               <a href="login.php" class="icons-btn d-inline-block ml-3"><i class="fa-solid fa-right-to-bracket"></i></a>

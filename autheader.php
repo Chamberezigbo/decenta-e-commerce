@@ -19,6 +19,8 @@
 
      <link rel="stylesheet" href="css/style.css" />
      <link rel="stylesheet" href="js/toastr-master/build/toastr.min.css" />
+     <!-- fluterwave -->
+     <script src="https://checkout.flutterwave.com/v3.js"></script>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                          <div class="logo">
                               <div class="site-logo">
-                                   <a href="index.php" class="js-logo-clone">Pharma</a>
+                                   <a href="index.php" class="js-logo-clone"><?= $_SESSION['fullName'] ?> </a>
                               </div>
                          </div>
                          <div class="main-nav d-none d-lg-block">
@@ -54,12 +56,12 @@
                          </div>
                          <div class="icons">
                               <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-                              <a href="cart.html" class="icons-btn d-inline-block bag">
+                              <a href="cart.php" class="icons-btn d-inline-block bag">
                                    <span class="icon-shopping-bag"></span>
-                                   <span class="number">2</span>
+                                   <span class="number"><?php echo ((isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : 0) ?></span>
                               </a>
-                              <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-                              <a href="logout.php" class="icons-btn"><?= $_SESSION['fullName'] ?> <i class="fa-solid fa-circle-left"></i></a>
+                              <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-lg-none"><span class="icon-menu"></span></a>
+                              <a href="logout.php" class="icons-btn"><i class="fa-solid fa-circle-left"></i></a>
                          </div>
                     </div>
                </div>

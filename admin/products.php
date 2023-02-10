@@ -63,25 +63,26 @@ if ($action == "view") {
                $target_file = $_FILES["pro_image"]["name"];
                $temp = explode('.', $target);
                $doc = round(microtime(true)) . '.' . end($temp);
-               // if (!move_uploaded_file($_FILES["proof_of_payment"]["tmp_name"], $target_dir . $doc)) {
-               //      $_SESSION['msg'] = "File upload failed";
-               //      $_SESSION['success'] = false;
-               //      header("Location:./products.php");
-               //      exit();
-               // } else {
+               if (!move_uploaded_file($_FILES["proof_of_payment"]["tmp_name"], $target_dir . $doc)) {
+                    $_SESSION['msg'] = "File upload failed";
+                    $_SESSION['success'] = false;
+                    header("Location:./products.php");
+                    exit();
+               } else {
                $db->Insert("INSERT INTO product (name, description, amount, pro_image) VALUES (:name, :description, :amount, :pro_image)", [
                     'name' => $_POST['product_name'],
                     'description' => $_POST['pro_description'],
                     'amount' => $_POST['pro_amount'],
                     'pro_image' => $doc,
                ]);
+               
 
                $_SESSION['success'] = true;
                $_SESSION['msg'] = "Package has been created";
                //reset post array
                header("Location:products.php");
                exit();
-               // }
+               }
           } catch (Exception $e) {
                error_log($e);
                $_SESSION['success'] = false;
