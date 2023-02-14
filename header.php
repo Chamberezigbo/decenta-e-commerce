@@ -51,7 +51,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                          <div class="logo">
                               <div class="site-logo">
-                                   <a href="index.php" class="js-logo-clone">Pharma</a>
+                                   <a href="index.php" class="js-logo-clone">NIDAFRICA</a>
                               </div>
                          </div>
                          <div class="main-nav d-none d-lg-block">
@@ -67,7 +67,7 @@
                                         <li class="has-children"></li>
                                         <li class="<?php if ($page == 'about.php') : echo 'active';
                                                        endif ?>" class="<?php if ($page == 'index.php') : echo 'active';
-                                                                                                                   endif ?>"><a href="about.php">About</a></li>
+                                                                           endif ?>"><a href="about.php">About</a></li>
                                         <li class="<?php if ($page == 'contact.php') : echo 'active';
                                                        endif ?>"><a href="contact.php">Contact</a></li>
                                    </ul>

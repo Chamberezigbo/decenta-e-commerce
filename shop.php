@@ -38,11 +38,11 @@
 			               <?php
                               if ($products && count($products)) {
                                    foreach ($products as $i => $product) {
-                                        $imageUrl = 'admin/uploads' . $product['pro_image'];
+                                        $imageUrl = 'admin/uploads/' . $product['pro_image'];
                               ?>
 			                         <div class="col-sm-6 col-lg-4 text-center item mb-4">
 			                              <span class="tag">Sale</span>
-			                              <a href="shop-single.html"> <img src="<?= $imageUrl ?>" alt="Image"></a>
+			                              <a href="shop-single.html"> <img src="<?= $imageUrl ?>" alt="Image" width="100px"></a>
 			                              <h3 class="text-dark"><a href="shop-single.php?productId=<?= $product['id'] ?>"><?= $product['name'] ?></a></h3>
 			                              <p class="price">$<?= $product['amount'] ?> </p>
 			                              <!-- <p class="price"><del>95.00</del> &mdash; $55.00</p> -->

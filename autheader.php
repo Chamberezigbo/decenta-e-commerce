@@ -53,14 +53,21 @@
                               </div>
                          </div>
                          <div class="main-nav d-none d-lg-block">
+                              <?php $page = basename($_SERVER['PHP_SELF']) ?>
                               <nav class="site-navigation text-right text-md-center" role="navigation">
                                    <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                        <li>
+                                        <li class="<?php if ($page == 'index.php') : echo 'active';
+                                                       endif ?>">
                                              <a href="index.php">Home</a>
                                         </li>
-                                        <li><a href="shop.php">Store</a></li>
+                                        <li class="<?php if ($page == 'shop.php') : echo 'active';
+                                                       endif ?>"><a href="shop.php">Store</a></li>
                                         <li class="has-children"></li>
-                                        <li><a href="contact.php">Contact</a></li>
+                                        <li class="<?php if ($page == 'about.php') : echo 'active';
+                                                       endif ?>" class="<?php if ($page == 'index.php') : echo 'active';
+                                                                           endif ?>"><a href="about.php">About</a></li>
+                                        <li class="<?php if ($page == 'contact.php') : echo 'active';
+                                                       endif ?>"><a href="contact.php">Contact</a></li>
                                    </ul>
                               </nav>
                          </div>

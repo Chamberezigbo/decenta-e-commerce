@@ -2,10 +2,10 @@
                require('auth.php');
                $products = $db->SelectAll("SELECT * FROM product LIMIT 3", []);
                ?>
-			<div class="site-blocks-cover" style="background-image: url('images/hero_1.jpg')">
+			<div class="site-blocks-cover" style="background-image: url('images/black_doc.jpeg')">
 			     <div class="container">
 			          <div class="row">
-			               <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+			               <div class="col-lg-7 mx-auto order-lg-2 align-self-center ">
 			                    <div class="site-block-cover-content text-center">
 			                         <h2 class="sub-title">
 			                              Effective Medicine, New Medicine Everyday
@@ -84,12 +84,12 @@
 			               <?php
                               if ($products && count($products)) {
                                    foreach ($products as $i => $product) {
-                                        $imageUrl = 'admin/uploads' . $product['pro_image'];
+                                        $imageUrl = 'admin/uploads/' . $product['pro_image'];
                               ?>
 			                         <div class="col-sm-6 col-lg-4 text-center item mb-4">
 			                              <span class="tag">Sale</span>
 			                              <a href="shop-single.html">
-			                                   <img src="<?= $imageUrl ?>" alt="Image" /></a>
+			                                   <img src="<?= $imageUrl ?>" alt="Image" width="100px" /></a>
 			                              <h3 class="text-dark">
 			                                   <a href="shop-single.php?productId=<?= $product['id'] ?>"><?= $product['name'] ?></a>
 			                              </h3>
