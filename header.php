@@ -21,9 +21,21 @@
      <link rel="stylesheet" href="js/toastr-master/build/toastr.min.css" />
      <!-- fluterwave -->
      <script src="https://checkout.flutterwave.com/v3.js"></script>
+     <!-- loader script -->
+     <script>
+          window.addEventListener('load', () => {
+               const loader = document.querySelector('.loader');
+               loader.classList.add('loader--hidden');
+               loader.addEventListener('transitionend', () => {
+                    document.body.removeChild(loader);
+               })
+          });
+     </script>
 </head>
 
+
 <body>
+     <div class="loader"></div>
      <div class="site-wrap">
           <div class="site-navbar py-2">
                <div class="search-wrap">
@@ -43,15 +55,21 @@
                               </div>
                          </div>
                          <div class="main-nav d-none d-lg-block">
+                              <?php $page = basename($_SERVER['PHP_SELF']) ?>
                               <nav class="site-navigation text-right text-md-center" role="navigation">
                                    <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                        <li class="active">
+                                        <li class="<?php if ($page == 'index.php') : echo 'active';
+                                                       endif ?>">
                                              <a href="index.php">Home</a>
                                         </li>
-                                        <li><a href="shop.php">Store</a></li>
+                                        <li class="<?php if ($page == 'shop.php') : echo 'active';
+                                                       endif ?>"><a href="shop.php">Store</a></li>
                                         <li class="has-children"></li>
-                                        <li><a href="about.php">About</a></li>
-                                        <li><a href="contact.php">Contact</a></li>
+                                        <li class="<?php if ($page == 'about.php') : echo 'active';
+                                                       endif ?>" class="<?php if ($page == 'index.php') : echo 'active';
+                                                                                                                   endif ?>"><a href="about.php">About</a></li>
+                                        <li class="<?php if ($page == 'contact.php') : echo 'active';
+                                                       endif ?>"><a href="contact.php">Contact</a></li>
                                    </ul>
                               </nav>
                          </div>

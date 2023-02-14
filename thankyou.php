@@ -49,7 +49,7 @@ if (isset($_GET['status']) && $_GET['status'] == 'completed') {
           }
      } else {
           print('<script>
-                    window.location("cart.php");
+                    window.location="cart.php";
                </script>');
      }
      // } else {

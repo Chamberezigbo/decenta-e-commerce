@@ -43,8 +43,6 @@
 <!-- end -->
 
 <!-- Bootstrap core JavaScript-->
-<script src="../js/jquery-3.3.1.min.js"></script>
-<script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- table -data  -->
@@ -62,6 +60,7 @@
 <script>
      $(document).ready(function() {
           $('#table_id').DataTable();
+          $('#table_id_1').DataTable();
      });
 </script>
 

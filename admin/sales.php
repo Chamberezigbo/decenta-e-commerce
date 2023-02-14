@@ -4,6 +4,10 @@ require('../core/pdo.php');
 
 $db = new DatabaseClass();
 
+$orderId = (isset($_GET) && isset($_GET['id'])) ? htmlspecialchars($_GET['id']) : null;
+$view = (isset($_GET) && isset($_GET['view'])) ? htmlspecialchars($_GET['view']) : null;
+$Items = '';
+
 $msg = $success = $packages = '';
 if (isset($_SESSION['success']) && isset($_SESSION['msg'])) {
      // || checks for boolean values only
@@ -12,6 +16,38 @@ if (isset($_SESSION['success']) && isset($_SESSION['msg'])) {
      //remove the session
      unset($_SESSION['success']);
      unset($_SESSION['msg']);
+}
+if ($orderId != null) {
+     # code...
+     $billing = $db->SelectAll("SELECT * FROM billing WHERE order_id = :id", [
+          'id' => $orderId
+     ]);
+     if ($billing) {
+          foreach ($billing as $i => $bill) {
+               $_SESSION['billFullName'] = $bill['fullName'];
+               $_SESSION['billEmail'] = $bill['email'];
+               $_SESSION['billPhone'] = $bill['phone'];
+               $_SESSION['billCountry'] = $bill['country'];
+               $_SESSION['billCompanyName'] = $bill['company_name'];
+               $_SESSION['billSate'] = $bill['state'];
+               $_SESSION['billAddress'] = $bill['address'];
+          }
+          echo "<script>
+                         document.addEventListener('DOMContentLoaded', function() {
+                              //                //show the modal
+                              $('#modal_upd_package').modal('show')
+                    
+                         })
+               </script>";
+     }
+} elseif ($view != null) {
+     echo "<script>
+                         document.addEventListener('DOMContentLoaded', function() {
+                              //                //show the modal
+                              $('#modal_order').modal('show')
+                    
+                         })
+               </script>";
 }
 $orders = $db->SelectAll("SELECT * FROM orders", []);
 ?>
@@ -34,31 +70,32 @@ $orders = $db->SelectAll("SELECT * FROM orders", []);
                     <table class="display table table-bordered" id="table_id" width="100%" cellspacing="0">
                          <thead>
                               <tr>
-                                   <th>Email</th>
                                    <th>Total Amount</th>
                                    <th>Date</th>
-                                   <th>view products</th>
+                                   <th>view Products</th>
+                                   <th>view List</th>
                               </tr>
                          </thead>
                          <tfoot>
                               <tr>
-                                   <th>Email</th>
                                    <th>Total Amount</th>
                                    <th>Date</th>
-                                   <th>view products</th>
+                                   <th>view Products</th>
+                                   <th>view List</th>
                               </tr>
                          </tfoot>
                          <tbody>
                               <?php
                               if ($orders && count($orders)) {
                                    foreach ($orders as $i => $order) {
+                                        $orderId = $order['order_id'];
+                                        $Items = json_decode($order["details"], true);
                               ?>
                                         <tr>
-                                             <?php print(stripslashes($product['email'])); ?>
-                                             <?php print(stripslashes($product['amount'])); ?>
-                                             <td><?php print(stripslashes($product['date'])); ?></td>
-                                             <td><?php print(stripslashes($product['name'])); ?></td>
-                                             <td><button data-package-id="<?php echo $product['id']; ?>" class="btn btn-success btn-upd-package  mb-2 mb-md-0">View Products</button></td>
+                                             <td><?php print(stripslashes($order['total_balance'])); ?> </td>
+                                             <td><?php echo date('m/d/Y', $order['date']); ?></td>
+                                             <td><button class="btn btn-success btn-upd-package  mb-2 mb-md-0"><a href="./sales.php?id=<?= $orderId ?>">View Billing Details</a></button></td>
+                                             <td><button class="btn btn-success btn-upd-package  mb-2 mb-md-0"><a href="./sales.php?view=List">Order List</a></button></td>
                                         </tr>
                               <?php }
                               } ?>
@@ -68,19 +105,73 @@ $orders = $db->SelectAll("SELECT * FROM orders", []);
           </div>
      </div>
 
-     <!-- modal update balance -->
+     <!-- Billing modal -->
      <div class="modal" id="modal_upd_package" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered">
                <div class="modal-content">
                     <div class="modal-header">
-                         <h5 class="modal-title">Update Product </h5>
-                         <p class="model-title text-danger">You are meant to Update all filed</p>
+                         <h5 class="modal-title">Billing Details </h5>
                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                          </button>
                     </div>
                     <div class="modal-body">
-                         <h1>List of products in orders</h1>
+                         <ul class="list-group">
+                              <li class="list-group-item">
+                                   FullName <span class="float-right"><?= $_SESSION['billFullName'] ?></span>
+                              </li>
+                              <li class="list-group-item">
+                                   Email <span class="float-right"><?= $_SESSION['billEmail'] ?></span>
+                              </li>
+                              <li class="list-group-item">
+                                   Country <span class="float-right"><?= $_SESSION['billCompanyName'] ?></span>
+                              </li>
+                              <li class="list-group-item">
+                                   Phone <span class="float-right"><?= $_SESSION['billPhone'] ?></span>
+                              </li>
+                              <li class="list-group-item">
+                                   State <span class="float-right"><?= $_SESSION['billSate'] ?></span>
+                              </li>
+                              <li class="list-group-item">
+                                   Address <span class="float-right"><?= $_SESSION['billAddress'] ?></span>
+                              </li>
+                              <li class="list-group-item">
+                                   Company Name <span class="float-right"><?= $_SESSION['billCompanyName'] ?></span>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <!-- Order modal -->
+     <div class="modal" id="modal_order" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h5 class="modal-title">Billing Details </h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                    <div class="modal-body">
+                         <ul class="list-group">
+                              <?php
+                              foreach ($Items as $i => $item) {
+                              ?>
+                                   <li class="list-group-item">
+                                        Product Name <span class="float-right"><?= $item['item_name'] ?></span>
+                                   </li>
+                                   <li class="list-group-item">
+                                        Product Price <span class="float-right"><?= $item['item_price'] ?></span>
+                                   </li>
+                                   <li class="list-group-item">
+                                        Product Quantity <span class="float-right"><?= $item['item_quantity'] ?></span>
+                                   </li>
+                              <?php
+                              }
+                              ?>
+                         </ul>
                     </div>
                </div>
           </div>
@@ -91,7 +182,7 @@ $orders = $db->SelectAll("SELECT * FROM orders", []);
 <!-- /.container-fluid -->
 
 </div>
-<script>
+<!-- <script>
      [...$('.btn-upd-package')].forEach(el => {
           $(el).on('click', function() {
                if (this.getAttribute('data-package-id')) {
@@ -101,6 +192,6 @@ $orders = $db->SelectAll("SELECT * FROM orders", []);
                }
           })
      })
-</script>
+</script> -->
 <?php
 include "footer.php";

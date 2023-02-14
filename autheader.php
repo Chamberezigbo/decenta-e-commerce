@@ -21,9 +21,19 @@
      <link rel="stylesheet" href="js/toastr-master/build/toastr.min.css" />
      <!-- fluterwave -->
      <script src="https://checkout.flutterwave.com/v3.js"></script>
+     <script>
+          window.addEventListener('load', () => {
+               const loader = document.querySelector('.loader');
+               loader.classList.add('loader--hidden');
+               loader.addEventListener('transitionend', () => {
+                    document.body.removeChild(loader);
+               })
+          });
+     </script>
 </head>
 
 <body>
+     <div class="loader"></div>
      <div class="site-wrap">
           <div class="site-navbar py-2">
                <div class="search-wrap">
@@ -45,7 +55,7 @@
                          <div class="main-nav d-none d-lg-block">
                               <nav class="site-navigation text-right text-md-center" role="navigation">
                                    <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                        <li class="active">
+                                        <li>
                                              <a href="index.php">Home</a>
                                         </li>
                                         <li><a href="shop.php">Store</a></li>

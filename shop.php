@@ -15,11 +15,11 @@
 			     <div class="container">
 
 			          <div class="row mb-5">
-			               <div class="col-lg-6">
+			               <!-- <div class="col-lg-6">
 			                    <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
 			                    <div id="slider-range" class="border-primary"></div>
 			                    <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
-			               </div>
+			               </div> -->
 			               <div class="col-lg-6">
 			                    <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Reference</h3>
 			                    <button type="button" class="btn btn-secondary btn-md dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
@@ -82,7 +82,7 @@
 			                    </a>
 			               </div>
 			               <div class="col-lg-6 mb-5 mb-lg-0">
-			                    <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_2.jpg');">
+			                    <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/black_doc.jpeg');">
 			                         <div class="banner-1-inner ml-auto  align-self-center">
 			                              <h2>Rated by Experts</h2>
 			                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.

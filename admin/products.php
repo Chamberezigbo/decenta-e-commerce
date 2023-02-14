@@ -3,6 +3,8 @@ session_start();
 
 //if action is null, render the form to create a new package
 $action = (isset($_GET) && isset($_GET['action'])) ? htmlspecialchars($_GET['action']) : null;
+$singleId = (isset($_GET) && isset($_GET['id'])) ? htmlspecialchars($_GET['id']) : null;
+
 
 require('../core/pdo.php');
 
@@ -17,10 +19,29 @@ if (isset($_SESSION['success']) && isset($_SESSION['msg'])) {
      unset($_SESSION['success']);
      unset($_SESSION['msg']);
 }
-//! finch up with updating product and viewing oder's //
 //render the form 
 if ($action == "view") {
      $products = $db->SelectAll("SELECT * FROM product", []);
+     if ($action == "view" && $singleId != null) {
+          $singleProduct = $db->SelectAll("SELECT * FROM product WHERE id = :id ", [
+               'id' => $singleId
+          ]);
+          if ($singleProduct) {
+               foreach ($singleProduct as $i => $product) {
+                    $_SESSION['proName'] = $product['name'];
+                    $_SESSION['proAmount'] = $product['amount'];
+                    $_SESSION['proDecs'] = $product['description'];
+               }
+
+               echo "<script>
+                         document.addEventListener('DOMContentLoaded', function() {
+                              //                //show the modal
+                              $('#modal_upd_package').modal('show')
+                    
+                         })
+               </script>";
+          }
+     }
      if ($_SERVER['REQUEST_METHOD'] == "POST") {
           try {
                if (isset($_POST['action']) && !empty($_POST['action'])) {
@@ -30,7 +51,7 @@ if ($action == "view") {
                               'name' => $_POST['product_name'],
                               'des' => $_POST['pro_description'],
                               'amount' => $_POST['pro_amount'],
-                              'id' => $_POST['id'],
+                              'id' => $singleId,
                          ]);
                          $_SESSION['success'] = true;
                          $_SESSION['msg'] = "Package has been updated";
@@ -63,25 +84,25 @@ if ($action == "view") {
                $target_file = $_FILES["pro_image"]["name"];
                $temp = explode('.', $target);
                $doc = round(microtime(true)) . '.' . end($temp);
-               if (!move_uploaded_file($_FILES["proof_of_payment"]["tmp_name"], $target_dir . $doc)) {
+               if (!move_uploaded_file($_FILES["pro_image"]["tmp_name"], $target_dir . $doc)) {
                     $_SESSION['msg'] = "File upload failed";
                     $_SESSION['success'] = false;
                     header("Location:./products.php");
                     exit();
                } else {
-               $db->Insert("INSERT INTO product (name, description, amount, pro_image) VALUES (:name, :description, :amount, :pro_image)", [
-                    'name' => $_POST['product_name'],
-                    'description' => $_POST['pro_description'],
-                    'amount' => $_POST['pro_amount'],
-                    'pro_image' => $doc,
-               ]);
-               
+                    $db->Insert("INSERT INTO product (name, description, amount, pro_image) VALUES (:name, :description, :amount, :pro_image)", [
+                         'name' => $_POST['product_name'],
+                         'description' => $_POST['pro_description'],
+                         'amount' => $_POST['pro_amount'],
+                         'pro_image' => $doc,
+                    ]);
 
-               $_SESSION['success'] = true;
-               $_SESSION['msg'] = "Package has been created";
-               //reset post array
-               header("Location:products.php");
-               exit();
+
+                    $_SESSION['success'] = true;
+                    $_SESSION['msg'] = "Package has been created";
+                    //reset post array
+                    header("Location:products.php");
+                    exit();
                }
           } catch (Exception $e) {
                error_log($e);
@@ -121,16 +142,16 @@ require "header.php";
                <div class="col-2 text-end">
                     <?php if ($action === "view") : ?>
                          <a href="./products.php" class="btn btn-info mb-2 mb-md-0">
-                              Add new package </a>
+                              Add new Product </a>
                     <?php else : ?>
                          <a href="./products.php?action=view" class="btn btn-info mb-2 mb-md-0">
-                              View packages </a>
+                              View Product </a>
                     <?php endif; ?>
                </div>
           </div>
           <?php if ($action === "view") : ?>
                <div class="table-responsive">
-                    <table class="table mb-0 table-striped table-hover">
+                    <table class="table mb-0 table-striped table-hover" id="table_id_1" class="display">
                          <thead>
                               <tr>
                                    <th>#</th>
@@ -138,7 +159,7 @@ require "header.php";
                                    <th>Products Description</th>
                                    <th>Products Amount</th>
                                    <th>Product Image</th>
-                                   <th colspan="2" class="text-center">Action</th>
+                                   <th class="text-center">Action</th>
                               </tr>
                          </thead>
                          <tbody>
@@ -147,9 +168,9 @@ require "header.php";
                                    foreach ($products as $i => $product) {
                               ?>
                                         <tr>
-                                             <th scope="row">
+                                             <td scope="row">
                                                   <?php echo ++$i; ?>
-                                             </th>
+                                             </td>
                                              <td>
                                                   <?php print(stripslashes($product['name'])); ?>
                                              </td>
@@ -160,10 +181,10 @@ require "header.php";
                                                   <?php print(stripslashes($product['amount'])); ?>
                                              </td>
                                              <td>
-                                                  <?php print(stripslashes($product['pro_image'])); ?>
+                                                  <img src="<?= 'uploads/' . $product['pro_image'] ?>" class="rounded" alt="..." width="30px">
                                              </td>
                                              <td class="text-center">
-                                                  <button data-package-id="<?php echo $product['id']; ?>" class="btn btn-success btn-upd-package  mb-2 mb-md-0">Update</button>
+                                                  <button data-package-id="<?php echo $product['id']; ?>" class="btn btn-success btn-upd-package  mb-2 mb-md-0"><a href="./products.php?action=view&id=<?= $product['id'] ?>">Update</a></button>
                                                   <form method="post" onsubmit="return confirm('Are you sure that you want to delete this package?')" class="d-inline">
                                                        <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
                                                        <input type="hidden" name="action" value="del-package" />
@@ -221,18 +242,19 @@ require "header.php";
                          <div class="modal-body">
                               <input type="hidden" name="action" value="upd-package">
                               <input type="hidden" name="id" id="inp_package_id">
-
                               <div class="mb-3">
                                    <label class="form-label">Product name</label>
-                                   <input class="form-control" type="text" name="product_name" id="inp_package_name" octavalidate="R,TEXT">
+                                   <input class="form-control" type="text" value="<?= $_SESSION['proName'] ?>" name="product_name" id="inp_package_name" octavalidate="R,TEXT">
                               </div>
                               <div class="mb-3">
                                    <label class="form-label">Product Description</label>
-                                   <textarea name="pro_description" class="form-control" cols="30" id="inp_pro_des" rows="10" octavalidate="R,TEXT"></textarea>
+                                   <textarea name="pro_description" class="form-control" cols="30" id="inp_pro_des" rows="10" octavalidate="R,TEXT">
+                                        <?= $_SESSION['proDecs'] ?>
+                                   </textarea>
                               </div>
                               <div class="mb-3">
                                    <label class="form-label">Product Amount</label>
-                                   <input class="form-control" type="number" name="pro_amount" id="inp_max_deposit" octavalidate="R,DIGITS">
+                                   <input class="form-control" type="number" name="pro_amount" value="<?= $_SESSION['proAmount'] ?>" id="inp_max_deposit" octavalidate="R,DIGITS">
                               </div>
                          </div>
                          <div class="modal-footer">
@@ -260,15 +282,15 @@ require "header.php";
                }
           });
 
-          [...$('.btn-upd-package')].forEach(el => {
-               $(el).on('click', function() {
-                    if (this.getAttribute('data-package-id')) {
-                         $('#inp_package_id').val(this.getAttribute('data-package-id'))
-                         //show the modal
-                         $('#modal_upd_package').modal('show')
-                    }
-               })
-          })
+          // [...$('.btn-upd-package')].forEach(el => {
+          //      $(el).on('click', function() {
+          //           if (this.getAttribute('data-package-id')) {
+          //                $('#inp_package_id').val(this.getAttribute('data-package-id'))
+          //                //show the modal
+          //                $('#modal_upd_package').modal('show')
+          //           }
+          //      })
+          // })
      })
 </script>
 <script>
