@@ -63,7 +63,7 @@
                                              <a href="index.php">Home</a>
                                         </li>
                                         <li class="<?php if ($page == 'shop.php') : echo 'active';
-                                                       endif ?>"><a href="shop.php">Store</a></li>
+                                                       endif ?>"><a href="shop.php">Product</a></li>
                                         <li class="has-children"></li>
                                         <li class="<?php if ($page == 'about.php') : echo 'active';
                                                        endif ?>" class="<?php if ($page == 'index.php') : echo 'active';

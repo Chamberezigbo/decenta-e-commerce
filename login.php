@@ -25,8 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION["user_id"] = $result['user_id'];
                     $_SESSION["email"] = $result['email'];
                     $_SESSION["fullName"] = $result['fullName'];
-                    print(
-                    '<script>
+                    print('<script>
                               setTimeout(() => {
                                    toastr.success("Welcome youve been logged in");
                                    console.log("Delayed for 1 second.");
@@ -58,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <!-- Icon -->
           <div class="fadeIn first">
                <div class="site-logo">
-                    <a href="index.html" class="js-logo-clone">Pharma</a>
+                    <a href="index.html" class="js-logo-clone">NIDAFRICA</a>
                </div>
           </div>
 
@@ -67,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                <input type="email" id="login" class="fadeIn second" name="email" placeholder="email" required>
                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required>
                <input type="submit" class="fadeIn fourth mt-3" value="Log In"><br>
-               <a href="signup.php">Dont have an account yet</a>
+               <a href="signup.php">Don't have an account yet</a>
           </form>
 
           <!-- Remind Passowrd -->

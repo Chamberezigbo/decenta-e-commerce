@@ -88,7 +88,7 @@
                               ?>
 			                         <div class="col-sm-6 col-lg-4 text-center item mb-4">
 			                              <span class="tag">Sale</span>
-			                              <a href="shop-single.html">
+			                              <a href="shop-single.php?productId=<?= $product['id'] ?>">
 			                                   <img src="<?= $imageUrl ?>" alt="Image" width="100px" /></a>
 			                              <h3 class="text-dark">
 			                                   <a href="shop-single.php?productId=<?= $product['id'] ?>"><?= $product['name'] ?></a>

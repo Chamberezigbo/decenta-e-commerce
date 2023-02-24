@@ -15,7 +15,7 @@
                $single_products = $db->SelectAll("SELECT * FROM product WHERE id = :id", ['id' => $productId]);
                foreach ($single_products as $product) {
                     $productName = $product['name'];
-                    $imageUrl = 'admin/uploads' . $product['pro_image'];
+                    $imageUrl = 'admin/uploads/' . $product['pro_image'];
                     $des = $product['description'];
                     $amount = $product['amount'];
                };
@@ -34,7 +34,7 @@
 			          <div class="row">
 			               <div class="col-md-5 mr-auto">
 			                    <div class="border text-center">
-			                         <img src="<?= $imageUrl ?>" alt="Image" class="img-fluid p-5">
+			                         <img src="<?= $imageUrl ?>" alt="Image" width="90%" class="img-fluid p-5">
 			                    </div>
 			               </div>
 			               <div class="col-md-6">
