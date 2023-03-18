@@ -82,9 +82,9 @@
 			          <div class="row">
 			               <div class="col-md-6">
 			                    <div class="row mb-5">
-			                         <div class="col-md-6 mb-3 mb-md-0">
+			                         <!-- <div class="col-md-6 mb-3 mb-md-0">
 			                              <button class="btn btn-primary btn-md btn-block" onclick="confirm('Are you sure tou want to clear your cart')"><a class="text-dark" href="">Empty Cart</a></button>
-			                         </div>
+			                         </div> -->
 			                         <div class="col-md-6">
 			                              <button class="btn btn-outline-primary btn-md btn-block"><a class="text-dark" href="shop.php">Continue Shopping</a></button>
 			                         </div>
@@ -127,17 +127,11 @@
 			                                   </div>
 			                              </div>
 
+			                              <!-- Add whatsapp link -->
 			                              <div class="row">
 			                                   <div class="col-md-12">
-			                                        <?php
-                                                       if (!empty($_SESSION['shopping_cart'])) {
-                                                       ?>
-			                                             <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.php'">Proceed To
-			                                                  Checkout</button>
-			                                        <?php
-                                                       } else { ?>
-			                                             <button class="btn btn-primary btn-lg btn-block " onclick="window.location='shop.php'">Shop Now</button>
-			                                        <?php } ?>
+			                                        <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.php'">Proceed To
+			                                             WhatsApp</button>
 			                                   </div>
 			                              </div>
 			                         </div>

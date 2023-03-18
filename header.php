@@ -51,7 +51,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                          <div class="logo">
                               <div class="site-logo">
-                                   <a href="index.php" class="js-logo-clone">NIDAFRICA</a>
+                                   <a href="index.php" class="js-logo-clone"> <img src="./images/nidlogo.jpeg" width="100" alt=""> </a>
                               </div>
                          </div>
                          <div class="main-nav d-none d-lg-block">
@@ -70,17 +70,18 @@
                                                                            endif ?>"><a href="about.php">About</a></li>
                                         <li class="<?php if ($page == 'contact.php') : echo 'active';
                                                        endif ?>"><a href="contact.php">Contact</a></li>
+                                        <li class=""><a href="https://blog.nidafrica.co/">Blog</a></li>
                                    </ul>
                               </nav>
                          </div>
                          <div class="icons">
-                              <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                              <!-- <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a> -->
                               <a href="cart.php" class="icons-btn d-inline-block bag">
                                    <span class="icon-shopping-bag"></span>
                                    <span class="number"><?php echo ((isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : 0) ?></span>
                               </a>
                               <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-                              <a href="login.php" class="icons-btn d-inline-block ml-3"><i class="fa-solid fa-right-to-bracket"></i></a>
+                              <!-- <a href="login.php" class="icons-btn d-inline-block ml-3"><i class="fa-solid fa-right-to-bracket"></i></a> -->
                          </div>
                     </div>
                </div>
