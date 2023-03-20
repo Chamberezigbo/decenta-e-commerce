@@ -62,7 +62,7 @@
 			               <div class="col-md-6">
 			                    <h2 class="text-black"><?= $productName ?></h2>
 			                    <p><?php echo substrwords($des, 10);
-                                        ?>
+                                        ?><br>
 			                         <!-- Button trigger modal -->
 			                         <a class="ml-auto" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer; font-size:small">
 			                              View More
