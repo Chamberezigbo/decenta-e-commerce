@@ -8,9 +8,9 @@
 			               <div class="col-lg-7 mx-auto order-lg-2 align-self-center ">
 			                    <div class="site-block-cover-content text-center">
 			                         <h2 class="sub-title">
-			                              Effective Medicine, New Medicine Everyday
+			                              Natural Medicine Alternative
 			                         </h2>
-			                         <h1>Welcome To Pharma</h1>
+			                         <h1>The Complete Healthcare Solutions of Ayurvedic origin</h1>
 			                         <p>
 			                              <a href="shop.php" class="btn btn-primary px-5 py-3">Shop Now</a>
 			                         </p>
@@ -27,13 +27,12 @@
 			                    <div class="banner-wrap bg-primary h-100">
 			                         <a href="#" class="h-100">
 			                              <h5>
-			                                   Free <br />
-			                                   Shipping
+			                                   Vitamins<br />
+			                                   Minerals
 			                              </h5>
 			                              <p>
-			                                   Amet sit amet dolor
-			                                   <strong>Lorem, ipsum dolor sit amet
-			                                        consectetur adipisicing.</strong>
+			                                   We offer natural medicine alternatives,
+			                                   <strong>including vitamins & minerals.</strong>
 			                              </p>
 			                         </a>
 			                    </div>
@@ -42,13 +41,12 @@
 			                    <div class="banner-wrap h-100">
 			                         <a href="#" class="h-100">
 			                              <h5>
-			                                   Season <br />
-			                                   Sale 50% Off
+			                                   Beauty <br />
+			                                   Products
 			                              </h5>
 			                              <p>
-			                                   Amet sit amet dolor
-			                                   <strong>Lorem, ipsum dolor sit amet
-			                                        consectetur adipisicing.</strong>
+			                                   We offer authentic ayurvedic and herbal medicines,
+			                                   <strong>including beauty products.</strong>
 			                              </p>
 			                         </a>
 			                    </div>
@@ -57,13 +55,12 @@
 			                    <div class="banner-wrap bg-warning h-100">
 			                         <a href="#" class="h-100">
 			                              <h5>
-			                                   Buy <br />
-			                                   A Gift Card
+			                                   Nutritional <br />
+			                                   Drinks
 			                              </h5>
 			                              <p>
-			                                   Amet sit amet dolor
-			                                   <strong>Lorem, ipsum dolor sit amet
-			                                        consectetur adipisicing.</strong>
+			                                   We offer authentic ayurvedic and herbal medicines,
+			                                   <strong>including nutritional drinks.</strong>
 			                              </p>
 			                         </a>
 			                    </div>
@@ -245,25 +242,21 @@
 			     <div class="container">
 			          <div class="row align-items-stretch">
 			               <div class="col-lg-6 mb-5 mb-lg-0">
-			                    <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_1.jpg')">
+			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
 			                         <div class="banner-1-inner align-self-center">
-			                              <h2>Pharma Products</h2>
+			                              <h2>NID Africa Products</h2>
 			                              <p>
-			                                   Lorem, ipsum dolor sit amet consectetur
-			                                   adipisicing elit. Molestiae ex ad minus
-			                                   rem odio voluptatem.
+			                                   NID manufactures authentic ayurvedic and herbal medicines, including beauty Products, nutritional drinks, toiletries, and other topical health products like hand sanitizers.
 			                              </p>
 			                         </div>
 			                    </a>
 			               </div>
 			               <div class="col-lg-6 mb-5 mb-lg-0">
-			                    <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/black_doc.jpeg')">
+			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
 			                         <div class="banner-1-inner ml-auto align-self-center">
-			                              <h2>Rated by Experts</h2>
+			                              <h2>Exclusive Distributor</h2>
 			                              <p>
-			                                   Lorem, ipsum dolor sit amet consectetur
-			                                   adipisicing elit. Molestiae ex ad minus
-			                                   rem odio voluptatem.
+			                                   Naturetwig Impex (Nig.) Ltd is the Exclusive Distributor of North India Pharma Pvt. Ltd In Nigeria and West Africa in extension.
 			                              </p>
 			                         </div>
 			                    </a>

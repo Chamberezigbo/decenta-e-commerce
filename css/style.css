@@ -104,6 +104,7 @@ a:hover {
 .btn-primary{
      background-color: #cf382e !important;
      border: 1px solid #cf382e !important;
+     color: white !important;
 }
 .btn-outline-primary{
      color: #cf382e !important;
@@ -724,15 +725,15 @@ input[type="text"] {
 	}
 }
 .site-blocks-cover h1 {
-	font-size: 50px;
-	font-weight: 900;
+	font-size: 30px;
+	font-weight: 700;
 	color: #fff;
 	margin-bottom: 30px;
 	text-transform: uppercase;
 }
 @media (min-width: 768px) {
 	.site-blocks-cover h1 {
-		font-size: 70px;
+		font-size: 38px;
 	}
 }
 .site-blocks-cover p {
@@ -1200,6 +1201,7 @@ input[type="text"] {
 	font-size: 12px;
 	background: #cf382e;
 	right: -5px;
+     color: #fff;
 }
 
 .search-wrap {
@@ -1427,7 +1429,7 @@ input[type="text"] {
 
 .tag {
 	position: absolute;
-	background: #e86b00;
+	background: #000;
 	color: #fff;
 	letter-spacing: 0.2em;
 	padding: 7px 20px;

@@ -19,6 +19,28 @@
                     $des = $product['description'];
                     $amount = $product['amount'];
                };
+
+               function substrwords($text, $maxchar, $end = '...')
+               {
+                    if (strlen($text) > $maxchar || $text == '') {
+                         $words = preg_split('/\s/', $text);
+                         $output = '';
+                         $i      = 0;
+                         while (1) {
+                              $length = strlen($output) + strlen($words[$i]);
+                              if ($length > $maxchar) {
+                                   break;
+                              } else {
+                                   $output .= " " . $words[$i];
+                                   ++$i;
+                              }
+                         }
+                         $output .= $end;
+                    } else {
+                         $output = $text;
+                    }
+                    return $output;
+               }
                ?>
 
 			<div class="bg-light py-3">
@@ -39,7 +61,13 @@
 			               </div>
 			               <div class="col-md-6">
 			                    <h2 class="text-black"><?= $productName ?></h2>
-			                    <p><?= $des ?></p>
+			                    <p><?php echo substrwords($des, 10);
+                                        ?>
+			                         <!-- Button trigger modal -->
+			                         <a class="ml-auto" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer; font-size:small">
+			                              View More
+			                         </a>
+			                    </p>
 
 
 			                    <p><strong class="text-primary h4">$ <?= $amount ?></strong></p>
@@ -147,6 +175,27 @@
 			                              </p>
 			                         </div>
 			                    </a>
+			               </div>
+			          </div>
+			     </div>
+			</div>
+
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			     <div class="modal-dialog modal-dialog-centered">
+			          <div class="modal-content">
+			               <div class="modal-header">
+			                    <h5 class="modal-title" id="exampleModalLabel"><?= $productName  ?></h5>
+			                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                         <span aria-hidden="true">&times;</span>
+			                    </button>
+			               </div>
+			               <div class="modal-body">
+			                    <?= $des ?>
+			               </div>
+			               <div class="modal-footer">
+			                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			               </div>
 			          </div>
 			     </div>

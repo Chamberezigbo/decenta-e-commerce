@@ -16,7 +16,7 @@
 			               <div class="col-lg-7 mx-auto align-self-center">
 			                    <div class=" text-center">
 			                         <h1>About Us</h1>
-			                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum obcaecati natus iure voluptatum eveniet harum recusandae ducimus saepe.</p>ˀ
+			                         <p>NID Africa offers natural medicine alternatives of ayurvedic origin, including vitamins & and minerals, beauty products, nutritional drinks, toiletries, and other topical health products. </p>
 			                    </div>
 			               </div>
 			          </div>
@@ -40,13 +40,13 @@
 
 
 			                    <div class="site-section-heading pt-3 mb-4">
-			                         <h2 class="text-black">How We Started</h2>
+			                         <h2 class="text-black">Who we are</h2>
 			                    </div>
-			                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius repellat, dicta at laboriosam, nemo
-			                         exercitationem itaque eveniet architecto cumque, deleniti commodi molestias repellendus quos sequi hic fugiat
-			                         asperiores illum. Atque, in, fuga excepturi corrupti error corporis aliquam unde nostrum quas.</p>
-			                    <p>Accusantium dolor ratione maiores est deleniti nihil? Dignissimos est, sunt nulla illum autem in, quibusdam
-			                         cumque recusandae, laudantium minima repellendus.</p>
+			                    <p>Where health has become a major concern, we, NID Africa, have developed complete healthcare solutions of Ayurvedic origin manufactured by North India Pvt. Ltd. (NID).</p>
+			                    <p>
+			                         NID manufactures authentic and herbal medicines, including beauty Products, nutritional drinks, toiletries, and other topical health products like hand sanitizers. Our products are Positioned at the high end of the market in terms of quality and price.
+			                         NID Africa offers natural medicine alternatives, including vitamins & minerals. We assure you that all medications are completely of Ayurvedic origin and natural.
+			                    </p>
 
 			               </div>
 			          </div>
@@ -71,13 +71,15 @@
 
 
 			                    <div class="site-section-heading pt-3 mb-4">
-			                         <h2 class="text-black">We Are Trusted Company</h2>
+			                         <h2 class="text-black">We are trusted</h2>
 			                    </div>
-			                    <p class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius repellat, dicta at laboriosam, nemo
-			                         exercitationem itaque eveniet architecto cumque, deleniti commodi molestias repellendus quos sequi hic fugiat
-			                         asperiores illum. Atque, in, fuga excepturi corrupti error corporis aliquam unde nostrum quas.</p>
-			                    <p class="text-black">Accusantium dolor ratione maiores est deleniti nihil? Dignissimos est, sunt nulla illum autem in, quibusdam
-			                         cumque recusandae, laudantium minima repellendus.</p>
+			                    <p class="text-black">
+			                         North India Pharma Pvt. Ltd. is the fastest-growing Ayurvedic medicines manufacturer, supplier, & exporter from Karnal, Haryana (India). We manufacture and distribute Ayurvedic medicines all over India and internationally in extension. Since our establishment in 2012, we have become one of India's top ten Ayurvedic capsule manufacturers. We are a well-knitted team committed to leveraging Ayurvedic medical science and pulling our resources to enhance well-being at every stage of life.
+			                    </p>
+			                    <p class="text-black">
+			                         North India Pharma Pvt. Ltd. Is a GMP-certified Ayurvedic medicines manufacturer, with years of experience to back us. Because of that, it has an unmatchable reputation for developing, manufacturing, and distributing medicines to treat various illnesses. We take pride in our commitment to operate at the highest quality standards and create and supply products that enhance the value of healthcare systems. Due to this, we are a certified Good Manufacturing Practice (G.M.P) company. We are one of the distinguished manufacturers and developers of a wide range of Ayurvedic products for many diseases in the form of Ayurvedic capsules, tablets, creams, gels, syrups, etc., through our advanced and latest machines to formulate the comprehensive range of herbal products as per Industrial standards.
+			                         Naturetwig Impex (Nig.) Ltd. RC number: 1456256 is the Exclusive Distributor of North India Pharma Pvt. Ltd. In Nigeria and West Africa in, extension.
+			                    </p>
 
 			               </div>
 			          </div>

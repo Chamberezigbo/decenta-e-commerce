@@ -5,10 +5,7 @@
 			                    <div class="block-7">
 			                         <h3 class="footer-heading mb-4">About Us</h3>
 			                         <p>
-			                              Lorem ipsum dolor sit amet, consectetur
-			                              adipisicing elit. Eius quae reiciendis
-			                              distinctio voluptates sed dolorum excepturi
-			                              iure eaque, aut unde.
+			                              NID Africa offers natural medicine alternatives of ayurvedic origin, including vitamins & and minerals, beauty products, nutritional drinks, toiletries, and other topical health products like hand sanitizers.
 			                         </p>
 			                    </div>
 			               </div>
@@ -57,6 +54,7 @@
 			     </div>
 			</footer>
 			</div>
+
 
 			<script src="js/jquery-3.3.1.min.js"></script>
 			<script src="js/jquery-ui.js"></script>
