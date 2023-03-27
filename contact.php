@@ -75,8 +75,9 @@
 			</div>
 
 
+			<!--No Content yet  -->
 
-			<div class="site-section bg-primary">
+			<!-- <div class="site-section bg-primary">
 			     <div class="container">
 			          <div class="row">
 			               <div class="col-12">
@@ -103,7 +104,7 @@
 			          </div>
 			     </div>
 
-			</div>
+			</div> -->
 
 			<?php
                include('footer.php');

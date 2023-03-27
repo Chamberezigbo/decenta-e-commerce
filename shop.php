@@ -69,23 +69,25 @@
 			</div>
 
 
-			<div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg');">
+			<div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg')">
 			     <div class="container">
 			          <div class="row align-items-stretch">
 			               <div class="col-lg-6 mb-5 mb-lg-0">
-			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color: white">
-			                         <div class="banner-1-inner align-self-center">
-			                              <h2>Pharma Products</h2>
-			                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.
+			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
+			                         <div class="text-center">
+			                              <h2 class="text-dark"> NID Africa Products</h2>
+			                              <p class="text-secondary">
+			                                   NID manufactures authentic ayurvedic and herbal medicines, including beauty Products, nutritional drinks, toiletries, and other topical health products like hand sanitizers.
 			                              </p>
 			                         </div>
 			                    </a>
 			               </div>
 			               <div class="col-lg-6 mb-5 mb-lg-0">
-			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white">
-			                         <div class="banner-1-inner ml-auto  align-self-center">
-			                              <h2>Rated by Experts</h2>
-			                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.
+			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
+			                         <div class="text-center">
+			                              <h2 class="text-dark">Exclusive Distributor</h2>
+			                              <p class="text-secondary">
+			                                   Naturetwig Impex (Nig.) Ltd is the Exclusive Distributor of North India Pharma Pvt. Ltd In Nigeria and West Africa in extension.
 			                              </p>
 			                         </div>
 			                    </a>

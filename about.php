@@ -73,10 +73,35 @@
 			                    <div class="site-section-heading pt-3 mb-4">
 			                         <h2 class="text-black">We are trusted</h2>
 			                    </div>
-			                    <p class="text-black">
+			                    <p>
 			                         North India Pharma Pvt. Ltd. is the fastest-growing Ayurvedic medicines manufacturer, supplier, & exporter from Karnal, Haryana (India). We manufacture and distribute Ayurvedic medicines all over India and internationally in extension. Since our establishment in 2012, we have become one of India's top ten Ayurvedic capsule manufacturers. We are a well-knitted team committed to leveraging Ayurvedic medical science and pulling our resources to enhance well-being at every stage of life.
 			                    </p>
-			                    <p class="text-black">
+
+			               </div>
+			          </div>
+			     </div>
+			</div>
+
+			<div class="site-section bg-light custom-border-bottom" data-aos="fade">
+			     <div class="container">
+			          <div class="row mb-5">
+			               <div class="col-md-6">
+			                    <div class="block-16">
+			                         <figure>
+			                              <img src="images/black_doc.jpeg" alt="Image placeholder" class="img-fluid rounded">
+			                              <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+
+			                         </figure>
+			                    </div>
+			               </div>
+			               <div class="col-md-1"></div>
+			               <div class="col-md-5">
+
+
+			                    <div class="site-section-heading pt-3 mb-4">
+			                         <h2 class="text-black">Who we are</h2>
+			                    </div>
+			                    <p>
 			                         North India Pharma Pvt. Ltd. Is a GMP-certified Ayurvedic medicines manufacturer, with years of experience to back us. Because of that, it has an unmatchable reputation for developing, manufacturing, and distributing medicines to treat various illnesses. We take pride in our commitment to operate at the highest quality standards and create and supply products that enhance the value of healthcare systems. Due to this, we are a certified Good Manufacturing Practice (G.M.P) company. We are one of the distinguished manufacturers and developers of a wide range of Ayurvedic products for many diseases in the form of Ayurvedic capsules, tablets, creams, gels, syrups, etc., through our advanced and latest machines to formulate the comprehensive range of herbal products as per Industrial standards.
 			                         Naturetwig Impex (Nig.) Ltd. RC number: 1456256 is the Exclusive Distributor of North India Pharma Pvt. Ltd. In Nigeria and West Africa in, extension.
 			                    </p>
@@ -86,7 +111,8 @@
 			     </div>
 			</div>
 
-			<div class="site-section site-section-sm site-blocks-1 border-0" data-aos="fade">
+			<!-- No Content -->
+			<!-- <div class="site-section site-section-sm site-blocks-1 border-0" data-aos="fade">
 			     <div class="container">
 			          <div class="row">
 			               <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
@@ -121,10 +147,10 @@
 			               </div>
 			          </div>
 			     </div>
-			</div>
+			</div> -->
 
 
-			<div class="site-section bg-light custom-border-bottom" data-aos="fade">
+			<!-- <div class="site-section bg-light custom-border-bottom" data-aos="fade">
 			     <div class="container">
 			          <div class="row justify-content-center mb-5">
 			               <div class="col-md-7 site-section-heading text-center pt-4">
@@ -195,7 +221,7 @@
 			               </div>
 			          </div>
 			     </div>
-			</div>
+			</div> -->
 
 			<?php
                include('footer.php');

@@ -104,58 +104,9 @@
 			     </div>
 			</div>
 
-			<!-- <div class="site-section bg-light">
-			     <div class="container">
-			          <div class="row">
-			               <div class="title-section text-center col-12">
-			                    <h2 class="text-uppercase">New Products</h2>
-			               </div>
-			          </div>
-			          <div class="row">
-			               <div class="col-md-12 block-3 products-wrap">
-			                    <div class="nonloop-block-3 owl-carousel">
-			                         <div class="text-center item mb-4">
-			                              <a href="shop-single.html">
-			                                   <img src="images/product_03.png" alt="Image" /></a>
-			                              <h3 class="text-dark">
-			                                   <a href="shop-single.html">Umcka Cold Care</a>
-			                              </h3>
-			                              <p class="price">$120.00</p>
-			                         </div>
+			<!-- No Content -->
 
-			                         <div class="text-center item mb-4">
-			                              <a href="shop-single.html">
-			                                   <img src="images/product_01.png" alt="Image" /></a>
-			                              <h3 class="text-dark">
-			                                   <a href="shop-single.html">Umcka Cold Care</a>
-			                              </h3>
-			                              <p class="price">$120.00</p>
-			                         </div>
-
-			                         <div class="text-center item mb-4">
-			                              <a href="shop-single.html">
-			                                   <img src="images/product_02.png" alt="Image" /></a>
-			                              <h3 class="text-dark">
-			                                   <a href="shop-single.html">Umcka Cold Care</a>
-			                              </h3>
-			                              <p class="price">$120.00</p>
-			                         </div>
-
-			                         <div class="text-center item mb-4">
-			                              <a href="shop-single.html">
-			                                   <img src="images/product_04.png" alt="Image" /></a>
-			                              <h3 class="text-dark">
-			                                   <a href="shop-single.html">Umcka Cold Care</a>
-			                              </h3>
-			                              <p class="price">$120.00</p>
-			                         </div>
-			                    </div>
-			               </div>
-			          </div>
-			     </div>
-			</div> -->
-
-			<div class="site-section">
+			<!-- <div class="site-section">
 			     <div class="container">
 			          <div class="row">
 			               <div class="title-section text-center col-12">
@@ -236,16 +187,16 @@
 			               </div>
 			          </div>
 			     </div>
-			</div>
+			</div> -->
 
 			<div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg')">
 			     <div class="container">
 			          <div class="row align-items-stretch">
 			               <div class="col-lg-6 mb-5 mb-lg-0">
 			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
-			                         <div class="banner-1-inner align-self-center">
-			                              <h2>NID Africa Products</h2>
-			                              <p>
+			                         <div class="text-center">
+			                              <h2 class="text-dark"> NID Africa Products</h2>
+			                              <p class="text-secondary">
 			                                   NID manufactures authentic ayurvedic and herbal medicines, including beauty Products, nutritional drinks, toiletries, and other topical health products like hand sanitizers.
 			                              </p>
 			                         </div>
@@ -253,9 +204,9 @@
 			               </div>
 			               <div class="col-lg-6 mb-5 mb-lg-0">
 			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
-			                         <div class="banner-1-inner ml-auto align-self-center">
-			                              <h2>Exclusive Distributor</h2>
-			                              <p>
+			                         <div class="text-center">
+			                              <h2 class="text-dark">Exclusive Distributor</h2>
+			                              <p class="text-secondary">
 			                                   Naturetwig Impex (Nig.) Ltd is the Exclusive Distributor of North India Pharma Pvt. Ltd In Nigeria and West Africa in extension.
 			                              </p>
 			                         </div>

@@ -130,7 +130,7 @@
 			                              <!-- Add whatsapp link -->
 			                              <div class="row">
 			                                   <div class="col-md-12">
-			                                        <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.php'">Proceed To
+			                                        <button class="btn btn-success btn-lg btn-block" onclick="window.location='https://api.whatsapp.com/send?phone=+2349133093899&text=Send20%a20%quote'">Proceed To
 			                                             WhatsApp</button>
 			                                   </div>
 			                              </div>
@@ -141,23 +141,25 @@
 			     </div>
 			</div>
 
-			<div class="site-section bg-secondary bg-image" style="background-image: url('images/black_doc.jpeg');">
+			<div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg')">
 			     <div class="container">
 			          <div class="row align-items-stretch">
 			               <div class="col-lg-6 mb-5 mb-lg-0">
-			                    <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_1.jpg');">
-			                         <div class="banner-1-inner align-self-center">
-			                              <h2>Pharma Products</h2>
-			                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.
+			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
+			                         <div class="text-dark align-self-center">
+			                              <h2>NID Africa Products</h2>
+			                              <p>
+			                                   NID manufactures authentic ayurvedic and herbal medicines, including beauty Products, nutritional drinks, toiletries, and other topical health products like hand sanitizers.
 			                              </p>
 			                         </div>
 			                    </a>
 			               </div>
 			               <div class="col-lg-6 mb-5 mb-lg-0">
-			                    <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/black_doc.jpeg');">
-			                         <div class="banner-1-inner ml-auto  align-self-center">
-			                              <h2>Rated by Experts</h2>
-			                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.
+			                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
+			                         <div class="text-dark ml-auto align-self-center">
+			                              <h2>Exclusive Distributor</h2>
+			                              <p>
+			                                   Naturetwig Impex (Nig.) Ltd is the Exclusive Distributor of North India Pharma Pvt. Ltd In Nigeria and West Africa in extension.
 			                              </p>
 			                         </div>
 			                    </a>
