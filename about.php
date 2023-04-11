@@ -30,7 +30,7 @@
 			                    <div class="block-16">
 			                         <figure>
 			                              <img src="images/bg_1.jpg" alt="Image placeholder" class="img-fluid rounded">
-			                              <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+			                              <!-- <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a> -->
 
 			                         </figure>
 			                    </div>
@@ -62,7 +62,7 @@
 			                    <div class="block-16">
 			                         <figure>
 			                              <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded">
-			                              <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+			                              <!-- <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a> -->
 
 			                         </figure>
 			                    </div>
@@ -89,7 +89,7 @@
 			                    <div class="block-16">
 			                         <figure>
 			                              <img src="images/black_doc.jpeg" alt="Image placeholder" class="img-fluid rounded">
-			                              <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+			                              <!-- <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a> -->
 
 			                         </figure>
 			                    </div>

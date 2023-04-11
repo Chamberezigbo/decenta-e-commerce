@@ -32,7 +32,7 @@
 			                              </h5>
 			                              <p>
 			                                   We offer natural medicine alternatives,
-			                                   <strong>including vitamins & minerals.</strong>
+			                                   including vitamins & minerals.
 			                              </p>
 			                         </a>
 			                    </div>
@@ -46,7 +46,7 @@
 			                              </h5>
 			                              <p>
 			                                   We offer authentic ayurvedic and herbal medicines,
-			                                   <strong>including beauty products.</strong>
+			                                   including beauty products.
 			                              </p>
 			                         </a>
 			                    </div>
@@ -60,7 +60,7 @@
 			                              </h5>
 			                              <p>
 			                                   We offer authentic ayurvedic and herbal medicines,
-			                                   <strong>including nutritional drinks.</strong>
+			                                   including nutritional drinks.
 			                              </p>
 			                         </a>
 			                    </div>
