@@ -184,11 +184,11 @@ require "header.php";
                                                   <img src="<?= 'uploads/' . $product['pro_image'] ?>" class="rounded" alt="..." width="30px">
                                              </td>
                                              <td class="text-center">
-                                                  <button data-package-id="<?php echo $product['id']; ?>" class="btn btn-success btn-upd-package  mb-2 mb-md-0"><a href="./products.php?action=view&id=<?= $product['id'] ?>">Update</a></button>
+                                                  <button data-package-id="<?php echo $product['id']; ?>" class="btn btn-info btn-upd-package  mb-2 mb-md-0"><a class="text-white" href="./products.php?action=view&id=<?= $product['id'] ?>">Update</a></button>
                                                   <form method="post" onsubmit="return confirm('Are you sure that you want to delete this package?')" class="d-inline">
                                                        <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
                                                        <input type="hidden" name="action" value="del-package" />
-                                                       <button class="btn btn-danger"> Delete</button>
+                                                       <button class="btn btn-danger mt-3"> Delete</button>
                                                   </form>
                                              </td>
                                         </tr>
