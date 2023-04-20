@@ -221,7 +221,7 @@ require "header.php";
                               <input class="form-control" type="file" name="pro_image" id="inp_min_return" octavalidate="R" accept-mime="image/jpeg, image/png, image/jpg" maxsize="10mb">
                          </div>
                          <div class=" mb-2">
-                              <button class="btn btn-success">Save Package</button>
+                              <button class="btn btn-success">Add Product</button>
                          </div>
                     </form>
                </div>

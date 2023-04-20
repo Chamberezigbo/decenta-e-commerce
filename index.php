@@ -2,7 +2,7 @@
                require('auth.php');
                $products = $db->SelectAll("SELECT * FROM product LIMIT 3", []);
                ?>
-			<div class="site-blocks-cover" style="background-image: url('images/black_doc.jpeg')">
+			<div class="site-blocks-cover" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) ,url('images/black_doc.jpeg')">
 			     <div class="container">
 			          <div class="row">
 			               <div class="col-lg-7 mx-auto order-lg-2 align-self-center ">
@@ -12,7 +12,7 @@
 			                         </h2>
 			                         <h1>The Complete Healthcare Solutions of Ayurvedic origin</h1>
 			                         <p>
-			                              <a href="shop.php" class="btn btn-primary px-5 py-3">Shop Now</a>
+			                              <a href="shop.php" class="btn btn-primary px-5 py-3">See Products</a>
 			                         </p>
 			                    </div>
 			               </div>
@@ -24,10 +24,10 @@
 			     <div class="container">
 			          <div class="row align-items-stretch section-overlap">
 			               <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-			                    <div class="banner-wrap bg-primary h-100">
-			                         <a href="#" class="h-100">
+			                    <div class="banner-wrap bg-dark h-100">
+			                         <a href="#">
 			                              <h5>
-			                                   Vitamins<br />
+			                                   Vitamins
 			                                   Minerals
 			                              </h5>
 			                              <p>
@@ -41,7 +41,7 @@
 			                    <div class="banner-wrap h-100">
 			                         <a href="#" class="h-100">
 			                              <h5>
-			                                   Beauty <br />
+			                                   Beauty
 			                                   Products
 			                              </h5>
 			                              <p>
@@ -52,10 +52,10 @@
 			                    </div>
 			               </div>
 			               <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-			                    <div class="banner-wrap bg-warning h-100">
+			                    <div class="banner-wrap bg-dark h-100">
 			                         <a href="#" class="h-100">
 			                              <h5>
-			                                   Nutritional <br />
+			                                   Nutritional
 			                                   Drinks
 			                              </h5>
 			                              <p>
@@ -91,7 +91,7 @@
 			                                   <a href="shop-single.php?productId=<?= $product['id'] ?>"><?= $product['name'] ?></a>
 			                              </h3>
 			                              <!-- <p class="price"><del>95.00</del> &mdash; $55.00</p> -->
-			                              <p class="price">$ <?= $product['amount'] ?></p>
+			                              <p class="price">&#8358 <?= $product['amount'] ?></p>
 			                         </div>
 			               <?php }
                               } ?>

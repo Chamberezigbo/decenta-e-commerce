@@ -623,7 +623,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                                   </tbody>
                                              </table>
 
-                                             <div class="border mb-3">
+                                             <!-- <div class="border mb-3">
                                                   <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
 
                                                   <div class="collapse" id="collapsebank">
@@ -654,7 +654,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                                                  payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
                                                        </div>
                                                   </div>
-                                             </div>
+                                             </div> -->
 
                                              <div class="form-group">
                                                   <button type="submit" class="btn btn-primary btn-lg btn-block">Place
@@ -677,23 +677,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <!-- onclick="window.location='thankyou.html'" -->
 
 
-<div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg');">
+<div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg')">
      <div class="container">
           <div class="row align-items-stretch">
                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_1.jpg');">
-                         <div class="banner-1-inner align-self-center">
-                              <h2>Pharma Products</h2>
-                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.
+                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
+                         <div class="text-center">
+                              <h2 class="text-dark"> NID Africa Products</h2>
+                              <p class="text-secondary">
+                                   NID manufactures authentic ayurvedic and herbal medicines, including beauty Products, nutritional drinks, toiletries, and other topical health products like hand sanitizers.
                               </p>
                          </div>
                     </a>
                </div>
                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_2.jpg');">
-                         <div class="banner-1-inner ml-auto  align-self-center">
-                              <h2>Rated by Experts</h2>
-                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.
+                    <a href="#" class="banner-1 h-100 d-flex" style="background-color:white;">
+                         <div class="text-center">
+                              <h2 class="text-dark">Exclusive Distributor</h2>
+                              <p class="text-secondary">
+                                   Naturetwig Impex (Nig.) Ltd is the Exclusive Distributor of North India Pharma Pvt. Ltd In Nigeria and West Africa in extension.
                               </p>
                          </div>
                     </a>

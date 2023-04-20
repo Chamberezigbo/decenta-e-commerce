@@ -7,6 +7,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
      <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet" />
+     <link rel="shortcut icon" href="favicon.ico" />
      <link rel="stylesheet" href="fonts/icomoon/style.css" />
 
      <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -81,7 +82,7 @@
                                    <span class="number"><?php echo ((isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : 0) ?></span>
                               </a>
                               <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-                              <!-- <a href="login.php" class="icons-btn d-inline-block ml-3"><i class="fa-solid fa-right-to-bracket"></i></a> -->
+                              <a href="login.php" class="icons-btn d-inline-block ml-3"><i class="fa-solid fa-right-to-bracket"></i></a>
                          </div>
                     </div>
                </div>

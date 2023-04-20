@@ -10,7 +10,7 @@
                }
                ?>
 
-			<div class="site-blocks-cover inner-page" style="background-image: url('images/hero_1.jpg');">
+			<div class="site-blocks-cover inner-page" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('images/hero_1.jpg');">
 			     <div class="container">
 			          <div class="row">
 			               <div class="col-lg-7 mx-auto align-self-center">
@@ -98,9 +98,6 @@
 			               <div class="col-md-5">
 
 
-			                    <div class="site-section-heading pt-3 mb-4">
-			                         <h2 class="text-black">Who we are</h2>
-			                    </div>
 			                    <p>
 			                         North India Pharma Pvt. Ltd. Is a GMP-certified Ayurvedic medicines manufacturer, with years of experience to back us. Because of that, it has an unmatchable reputation for developing, manufacturing, and distributing medicines to treat various illnesses. We take pride in our commitment to operate at the highest quality standards and create and supply products that enhance the value of healthcare systems. Due to this, we are a certified Good Manufacturing Practice (G.M.P) company. We are one of the distinguished manufacturers and developers of a wide range of Ayurvedic products for many diseases in the form of Ayurvedic capsules, tablets, creams, gels, syrups, etc., through our advanced and latest machines to formulate the comprehensive range of herbal products as per Industrial standards.
 			                         Naturetwig Impex (Nig.) Ltd. RC number: 1456256 is the Exclusive Distributor of North India Pharma Pvt. Ltd. In Nigeria and West Africa in, extension.

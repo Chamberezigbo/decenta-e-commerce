@@ -72,7 +72,6 @@
                               </nav>
                          </div>
                          <div class="icons">
-                              <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
                               <a href="cart.php" class="icons-btn d-inline-block bag">
                                    <span class="icon-shopping-bag"></span>
                                    <span class="number"><?php echo ((isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : 0) ?></span>

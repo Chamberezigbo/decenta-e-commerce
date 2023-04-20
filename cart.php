@@ -130,8 +130,7 @@
 			                              <!-- Add whatsapp link -->
 			                              <div class="row">
 			                                   <div class="col-md-12">
-			                                        <button class="btn btn-success btn-lg btn-block" onclick="window.location='https://api.whatsapp.com/send?phone=+2349133093899&text=Send20%a20%quote'">Proceed To
-			                                             WhatsApp</button>
+			                                        <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.php'">Continue</button>
 			                                   </div>
 			                              </div>
 			                         </div>
