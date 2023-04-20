@@ -1,5 +1,6 @@
 			<?php
                session_start();
+               require('core/mail.php');
                $currentTime = time();
                if (isset($_SESSION['auth']) && $currentTime < $_SESSION['expire']) {
                     include('autheader.php');
@@ -7,6 +8,22 @@
                     session_unset();
                     session_destroy();
                     include('header.php');
+               }
+
+               if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                    $email = $_POST['c_email'];
+                    $fname = $_POST['c_fname'];
+                    $lname = $_POST['c_lname'];
+                    $subject = $_POST['c_subject'];
+                    $message = $_POST['c_message'];
+                    $fullName = $fname . ' ' . $lname;
+
+                    sendMail('nid@email.com', $fullName, $subject, $message);
+                    print('<script>
+                          document.addEventListener("DOMContentLoaded", function(){
+                          toastr.success("Email sent successfully",{timeOut: 10000});
+                     });</script>');
                }
                ?>
 
@@ -35,7 +52,7 @@
 			                              <div class="form-group row">
 			                                   <div class="col-md-6">
 			                                        <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-			                                        <input type="text" class="form-control" id="c_fname" name="c_fname">
+			                                        <input type="text" class="form-control" id="c_fname" name="c_fname" required>
 			                                   </div>
 			                                   <div class="col-md-6">
 			                                        <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
@@ -45,13 +62,13 @@
 			                              <div class="form-group row">
 			                                   <div class="col-md-12">
 			                                        <label for="c_email" class="text-black">Email <span class="text-danger">*</span></label>
-			                                        <input type="email" class="form-control" id="c_email" name="c_email" placeholder="">
+			                                        <input type="email" class="form-control" id="c_email" name="c_email" required placeholder="">
 			                                   </div>
 			                              </div>
 			                              <div class="form-group row">
 			                                   <div class="col-md-12">
 			                                        <label for="c_subject" class="text-black">Subject </label>
-			                                        <input type="text" class="form-control" id="c_subject" name="c_subject">
+			                                        <input type="text" class="form-control" id="c_subject" required name="c_subject">
 			                                   </div>
 			                              </div>
 
