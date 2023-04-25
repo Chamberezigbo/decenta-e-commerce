@@ -1,12 +1,5 @@
-<!-- PHP Form validation and processing  -->
 <?php
-include('header.php');
-
-ob_start();
-if (session_status() === PHP_SESSION_NONE) session_start();
-require 'core/pdo.php';
-require('core/mail.php');
-require 'PHP/octaValidate-PHP-main/src/Validate.php';
+include('auth.php');
 
 
 use Validate\octaValidate;
@@ -40,7 +33,7 @@ $valRules = array(
      ),
      "address" => array(
           ["R", "Your address address is required"],
-          ["ALPHA_SPACES", "Input a valid address"]
+          ["ALPHA_SPACES", "Input a valid address"],
      ),
      "state" => array(
           ["R", "Your sate number is required"],
@@ -104,9 +97,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['user_id'] = $user_id;
                     $_SESSION['fullName'] = $fullName;
                     $subject = "Thanks for signing up";
-                    sendMail($email, $surname, $subject, str_replace(["##fullname##", "##username##", '##password##'], [$fullName, $username, $password], file_get_contents("welcom-email.php")));
-                    header("Location:index.php");
-                    exit();
+                    // sendMail($email, $fullName, $subject, str_replace(["##fullname##", "##username##", '##password##'], [$fullName, $fullName, $password], file_get_contents("welcom-email.php")));
+                    print('<script>
+                              setTimeout(() => {
+                                   toastr.success("Welcome youve been logged in");
+                              },5000)
+                              window.location = "index.php";
+                         </script>');
                } else {
                     $_SESSION['error'] = 1;
                     $_SESSION['errorMassage '] = "Signup was not successful";
@@ -124,8 +121,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      }
 }
 ?>
-<!-- Backend ends here -->
-
 <div class="wrapper fadeInDown formSection">
      <div id="formContent">
           <!-- Tabs Titles -->
@@ -133,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <!-- Icon -->
           <div class="fadeIn first">
                <div class="site-logo">
-                    <a href="index.html" class="js-logo-clone">Pharma</a>
+                    <a href="index.html" class="js-logo-clone">NIDAFRICA</a>
                </div>
           </div>
 
@@ -400,7 +395,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                <input type="password" id="password" class="fadeIn third" name="pass" placeholder="password">
                <input type="password" id="password" class="fadeIn third" name="confirmPass" placeholder="Confirm your password">
-               <input type="submit" class="fadeIn fourth mt-3" value="Log In"><br>
+               <input type="submit" class="fadeIn fourth mt-3" value="Signup"><br>
           </form>
 
           <!-- Remind Password -->

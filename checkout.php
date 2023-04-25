@@ -14,8 +14,6 @@ if (isset($_SESSION["user_id"])) {
      };
 }
 
-require 'PHP/octaValidate-PHP-main/src/Validate.php';
-
 use Validate\octaValidate;
 //set configuration
 $options = array(
@@ -570,7 +568,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                          </div>
                          <div class="col-md-6">
                               <!-- Coupon Code -->
-                              <div class="row mb-5">
+                              <!-- <div class="row mb-5">
                                    <div class="col-md-12">
                                         <h2 class="h3 mb-3 text-black">Coupon Code</h2>
                                         <div class="p-3 p-lg-5 border">
@@ -585,7 +583,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                                         </div>
                                    </div>
-                              </div>
+                              </div> -->
 
                               <div class="row mb-5">
                                    <div class="col-md-12">

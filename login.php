@@ -28,21 +28,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     print('<script>
                               setTimeout(() => {
                                    toastr.success("Welcome youve been logged in");
-                                   console.log("Delayed for 1 second.");
                               },5000)
                               window.location = "index.php";
                          </script>');
                } else {
                     print('<script>
                                    document.addEventListener("DOMContentLoaded", function() {
-                                   toastr.error("Wrong password",{timeOut: 5000});
+                                   toastr.error("Wrong Email or Password",{timeOut: 5000});
                               })
                          </script>');
                }
           } else {
                print('<script>
                          document.addEventListener("DOMContentLoaded", function() {
-                         toastr.error("Wrong password",{timeOut: 5000});    
+                         toastr.error("Wrong Email or Password",{timeOut: 5000});    
                     })
                </script>');
           }
