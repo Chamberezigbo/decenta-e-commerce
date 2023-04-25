@@ -33,7 +33,7 @@ $valRules = array(
      ),
      "address" => array(
           ["R", "Your address address is required"],
-          ["ALPHA_SPACES", "Input a valid address"],
+          ["TEXT", "Input a valid address"],
      ),
      "state" => array(
           ["R", "Your sate number is required"],

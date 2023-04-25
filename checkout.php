@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                print('<script>
                function makePayment() {
                FlutterwaveCheckout({
-                    public_key: "FLWPUBK_TEST-686aa30e76c7b416d7064eae9c7b5c42-X",
+                    public_key: "FLWPUBK-2a0f08cd97d6eefb72ee0e0462cecf2a-X",
                     tx_ref: "titanic-48981487343MDI0NzMx",
                     amount: ' . $total . ' ,
                     currency: "NGN",
@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     name: "' . $_POST['fullName'] . '",
                     },
                     customizations: {
-                    title: "The Titanic Store",
-                    description: "Payment for an awesome cruise",
+                    title: "NidAfrica Store",
+                    description: "Payment for an awesome product",
                     logo: "https://www.logolynx.com/images/logolynx/22/2239ca38f5505fbfce7e55bbc0604386.jpeg",
                     },
                });
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
           print('<script>
                function makePayment() {
                FlutterwaveCheckout({
-                    public_key: "FLWPUBK_TEST-686aa30e76c7b416d7064eae9c7b5c42-X",
+                    public_key: "FLWPUBK-2a0f08cd97d6eefb72ee0e0462cecf2a-X",
                     tx_ref: "titanic-48981487343MDI0NzMx",
                     amount: ' . $total . ' ,
                     currency: "NGN",
@@ -138,8 +138,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     name: "' . $_POST['fullName'] . '",
                     },
                     customizations: {
-                    title: "The Titanic Store",
-                    description: "Payment for an awesome cruise",
+                    title: "NidAfrica Store",
+                    description: "Payment for an awesome product",
                     logo: "https://www.logolynx.com/images/logolynx/22/2239ca38f5505fbfce7e55bbc0604386.jpeg",
                     },
                });
